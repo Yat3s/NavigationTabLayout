@@ -69,7 +69,7 @@ public class TabView extends FrameLayout {
 
     public void cancelHighLight() {
         setBackgroundResource(R.color.normal);
-        startAnimation("tabWidth", mTabViewWidth);
+        startAnimation("translation", mTabViewWidth);
     }
 
     public void setAnimationDuration(int durationMillis) {
@@ -80,6 +80,7 @@ public class TabView extends FrameLayout {
         ObjectAnimator animator = ObjectAnimator.ofInt(this, property, value).setDuration(mAnimationDuration);
         animator.setInterpolator(new OvershootInterpolator());
         animator.start();
+
     }
 
     public int getTabHeight() {
