@@ -37,7 +37,6 @@ public class NavigationTab extends LinearLayout {
     }
 
     private void init() {
-
     }
 
     public void setTabViews(List<TabView> tabViews, int animationDuration) {

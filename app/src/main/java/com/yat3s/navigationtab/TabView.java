@@ -4,14 +4,11 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import butterknife.Bind;
@@ -33,6 +30,10 @@ public class TabView extends FrameLayout {
     private int mIconResId;
     private int mAnimationDuration = 1000;
     private int mIndex;
+
+    public TabView(Context context) {
+        super(context);
+    }
 
     public TabView(Context context, String title, int iconResId, int index) {
         super(context);
