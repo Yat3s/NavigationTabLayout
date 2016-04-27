@@ -19,7 +19,7 @@ import java.util.List;
 public class NavigationTab extends LinearLayout {
     private static final int DividerSize = 2; //dp
     private List<TabView> mTabViews;
-    private int mLastIndex = -1;
+    private int mLastIndex;
     private int mTabSize;
     private OnTabSelectedListener mTabSelectedListener;
 
@@ -86,9 +86,7 @@ public class NavigationTab extends LinearLayout {
             mTabSelectedListener.onSelected(currentIndex);
         }
         if (currentIndex != mLastIndex) {
-            if (-1 != mLastIndex) {
-                mTabViews.get(mLastIndex).cancelHighLight();
-            }
+            mTabViews.get(mLastIndex).cancelHighLight();
             tabView.highLight();
             mLastIndex = currentIndex;
         }
