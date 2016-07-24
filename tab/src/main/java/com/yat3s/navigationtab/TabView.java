@@ -11,8 +11,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by Yat3s on 4/22/16.
@@ -21,9 +19,7 @@ import butterknife.ButterKnife;
  */
 
 public class TabView extends FrameLayout {
-    @Bind(R.id.icon)
     ImageView icon;
-    @Bind(R.id.title)
     TextView title;
     private int mTabViewWidth;
     private String mTitle;
@@ -46,7 +42,8 @@ public class TabView extends FrameLayout {
     private void init() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_tab, this, true);
         setBackgroundResource(R.color.normal);
-        ButterKnife.bind(this);
+        icon = (ImageView) findViewById(R.id.icon);
+        title = (TextView) findViewById(R.id.title);
         icon.setImageDrawable(getResources().getDrawable(mIconResId));
         title.setText(mTitle);
         getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
